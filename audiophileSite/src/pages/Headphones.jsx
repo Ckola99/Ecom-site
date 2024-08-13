@@ -1,15 +1,12 @@
-import Navbar from "../components/Navbar"
-import Footer from "../components/Footer"
 import Items from "../components/Items"
 import headphones from "../assets/product-xx99-mark-two-headphones/mobile/image-category-page-preview.jpg"
 import xx99 from "../assets/product-xx99-mark-one-headphones/mobile/image-category-page-preview.jpg";
 import xx59 from "../assets/product-xx59-headphones/mobile/image-category-page-preview.jpg";
-
+import { Link } from "react-router-dom";
 
 const Headphones = () => {
   return (
 		<div>
-			<Navbar />
 			<div className="h-[100px] bg-black w-full flex justify-center items-center">
 				<h1 className="text-transform: uppercase text-white font-bold text-[28px] tracking-[2px]">
 					Headphones
@@ -40,9 +37,11 @@ const Headphones = () => {
 						and precision of studio-quality
 						sound.
 					</p>
-					<button className="w-[160px] h-[48px] bg-main-orange text-white text-transform: uppercase text-[13px] font-bold tracking-[1px]">
-						see product
-					</button>
+					<Link to="/product/xx99-mark-two-headphones">
+						<button className="w-[160px] h-[48px] bg-main-orange text-white text-transform: uppercase text-[13px] font-bold tracking-[1px]">
+							see product
+						</button>
+					</Link>
 				</div>
 			</div>
 
@@ -102,7 +101,6 @@ const Headphones = () => {
 				</div>
 			</div>
 			<Items />
-			<Footer />
 		</div>
   );
 }

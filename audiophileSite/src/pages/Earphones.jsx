@@ -1,12 +1,9 @@
-import Navbar from "../components/Navbar"
-import Footer from "../components/Footer"
 import Items from "../components/Items"
 import zx9 from "../assets/product-yx1-earphones/mobile/image-category-page-preview.jpg";
 
 const Earphones = () => {
   return (
 		<div>
-			<Navbar />
 			<div className="h-[100px] bg-black w-full flex justify-center items-center">
 				<h1 className="text-transform: uppercase text-white font-bold text-[28px] tracking-[2px]">
 					earphones
@@ -45,7 +42,6 @@ const Earphones = () => {
 			</div>
 
 			<Items />
-			<Footer />
 		</div>
   );
 }

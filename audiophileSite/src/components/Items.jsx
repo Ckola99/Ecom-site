@@ -2,10 +2,11 @@ import headsets from "../assets/shared/desktop/image-category-thumbnail-headphon
 import speaker from "../assets/shared/desktop/image-category-thumbnail-speakers.png";
 import earphones from "../assets/shared/desktop/image-category-thumbnail-earphones.png";
 import arrow from "../assets/shared/desktop/icon-arrow-right.svg";
+import { Link } from "react-router-dom";
 
 const Items = () => {
   return (
-		<div className="w-[327px] h-[683px] grid mx-6 mt-10 gap-2">
+		<div className="w-[327px] h-[683px] grid mx-auto mt-10 gap-2">
 			<div className="relative w-[327px] h-[217px] ">
 				<img
 					src={headsets}

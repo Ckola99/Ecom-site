@@ -1,28 +1,38 @@
-import { useState } from 'react'
-import './index.css'
-import { Routes, Route } from 'react-router-dom';
-import HomePage from './pages/HomePage';
-import Headphones from './pages/Headphones';
-import Speakers from './pages/Speakers';
-import ScrollToTop from "./components/ScrollToTop";
-import Earphones from './pages/Earphones';
+import "./index.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import Headphones from "./pages/Headphones";
+import Speakers from "./pages/Speakers";
+import Earphones from "./pages/Earphones";
+import Layout from "./components/Layout";
+import ProductPage from "./pages/ProductPage";
 
 function App() {
-
-  return (
-		<div className="">
-			<ScrollToTop />
+	return (
+		<Router>
 			<Routes>
-				<Route path="/" element={<HomePage />} />
-				<Route
-					path="/headphones"
-					element={<Headphones />}
-				/>
-				<Route path="/speakers" element={<Speakers />} />
-				<Route path="/earphones" element={<Earphones />} />
+				<Route path="/" element={<Layout />}>
+					<Route index element={<HomePage />} />
+					<Route
+						path="headphones"
+						element={<Headphones />}
+					/>
+					<Route
+						path="speakers"
+						element={<Speakers />}
+					/>
+					<Route
+						path="earphones"
+						element={<Earphones />}
+					/>
+					<Route
+						path="product/:productSlug"
+						element={<ProductPage />}
+					/>
+				</Route>
 			</Routes>
-		</div>
-  );
+		</Router>
+	);
 }
 
-export default App
+export default App;

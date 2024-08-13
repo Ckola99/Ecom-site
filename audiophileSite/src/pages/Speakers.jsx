@@ -1,13 +1,10 @@
-import Navbar from "../components/Navbar"
-import Footer from "../components/Footer"
-import Items from "../components/Items"
+import Items from "../components/Items";
 import zx9 from "../assets/product-zx9-speaker/mobile/image-category-page-preview.jpg";
 import zx7 from "../assets/product-zx7-speaker/mobile/image-category-page-preview.jpg";
 
 const Speakers = () => {
   return (
 		<div>
-			<Navbar />
 			<div className="h-[100px] bg-black w-full flex justify-center items-center">
 				<h1 className="text-transform: uppercase text-white font-bold text-[28px] tracking-[2px]">
 					Speakers
@@ -71,9 +68,7 @@ const Speakers = () => {
 					</button>
 				</div>
 			</div>
-
 			<Items />
-			<Footer />
 		</div>
   );
 }

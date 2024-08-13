@@ -12,7 +12,7 @@ const Footer = () => {
 				<img
 					src={bestGear}
 					alt=""
-					className="w-[327px] h-[300px]"
+					className="w-[327px] h-[300px] rounded-lg"
 				/>
 				<h3 className="text-[28px] text-center font-bold text-transform: uppercase my-10">
 					Bringing you the{" "}
@@ -38,7 +38,7 @@ const Footer = () => {
 				</p>
 			</div>
 
-			<div className="w-[375px] h-[654px] bg-black mt-[121px] flex flex-col items-center text-white">
+			<div className="w-full h-[654px] bg-black mt-[121px] flex flex-col items-center text-white">
 				<div className="w-[101px] h-[4px] bg-main-orange"></div>
 				<img
 					src={logo}
@@ -57,7 +57,7 @@ const Footer = () => {
 						</li>
 						<li>
 							<Link
-								to="/headphones"
+								to="headphones"
 								className="block hover:underline"
 							>
 								headphones
@@ -65,7 +65,7 @@ const Footer = () => {
 						</li>
 						<li>
 							<Link
-								to="/speakers"
+								to="speakers"
 								className="block hover:underline"
 							>
 								speakers
@@ -73,7 +73,7 @@ const Footer = () => {
 						</li>
 						<li>
 							<Link
-								to="/earphones"
+								to="earphones"
 								className="block hover:underline"
 							>
 								earphones

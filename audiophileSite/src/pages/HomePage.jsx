@@ -1,15 +1,12 @@
-import Navbar from "../components/Navbar";
 import speakerNoBg from "../assets/home/desktop/image-speaker-zx9.png"
 import earphonesImg from "../assets/home/mobile/image-earphones-yx1.jpg"
-import Footer from "../components/Footer";
 import Items from "../components/Items"
 
 const HomePage = () => {
 	return (
 		<div className="">
-			<Navbar />
 
-			<div className="bg-heroMobile h-[600px] w-[375px] bg-cover flex place-content-center">
+			<div className="bg-heroMobile h-[600px] w-full bg-cover flex place-content-center">
 				<div className="text-white flex flex-col items-center w-[328px] h-[290px] mt-[198px] gap-4">
 					<h1 className="tracking-[0.5em] text-transform: uppercase text-sm font-thin opacity-50">
 						New Product
@@ -37,7 +34,7 @@ const HomePage = () => {
 			<div className="relative">
 				<div className="w-[558px] h-[558px] rounded-full border border-white absolute -left-24"></div>
 			</div>
-			<div className="text-white w-[327px] h-[600px] bg-main-orange mx-6 rounded-lg mt-[121px] flex flex-col items-center">
+			<div className="text-white w-[327px] h-[600px] bg-main-orange mx-auto rounded-lg mt-[121px] flex flex-col items-center">
 				<div className="w-[320px] h-[320px] border border-white mx-[3.5px] rounded-full">
 					<div className="w-[279px] h-[279px] border border-white mx-[20.5px] mt-[19px] rounded-full">
 						<img
@@ -89,7 +86,6 @@ const HomePage = () => {
 					</div>
 				</div>
 			</div>
-      <Footer/>
 		</div>
 	);
 };
