@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-import bestGear from "../assets/shared/mobile/image-best-gear.jpg";
-import logo from "../assets/shared/desktop/logo.svg";
-import instaLogo from "../assets/shared/desktop/icon-instagram.svg";
-import facebookLogo from "../assets/shared/desktop/icon-facebook.svg";
-import twitterLogo from "../assets/shared/desktop/icon-twitter.svg";
+import bestGear from "/assets/shared/mobile/image-best-gear.jpg";
+import logo from "/assets/shared/desktop/logo.svg";
+import instaLogo from "/assets/shared/desktop/icon-instagram.svg";
+import facebookLogo from "/assets/shared/desktop/icon-facebook.svg";
+import twitterLogo from "/assets/shared/desktop/icon-twitter.svg";
 
 const Footer = () => {
 	return (

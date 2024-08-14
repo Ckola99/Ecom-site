@@ -1,6 +1,6 @@
-import cart from "../assets/shared/desktop/icon-cart.svg";
-import logo from "../assets/shared/desktop/logo.svg";
-import hamburger from "../assets/shared/tablet/icon-hamburger.svg";
+import cart from "/assets/shared/desktop/icon-cart.svg";
+import logo from "/assets/shared/desktop/logo.svg";
+import hamburger from "/assets/shared/tablet/icon-hamburger.svg";
 
 const Navbar = () => {
 	return (

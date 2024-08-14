@@ -1,6 +1,8 @@
 import Items from "../components/Items";
-import zx9 from "../assets/product-zx9-speaker/mobile/image-category-page-preview.jpg";
-import zx7 from "../assets/product-zx7-speaker/mobile/image-category-page-preview.jpg";
+import zx9 from "/assets/product-zx9-speaker/mobile/image-category-page-preview.jpg";
+import zx7 from "/assets/product-zx7-speaker/mobile/image-category-page-preview.jpg";
+import { Link } from "react-router-dom";
+
 
 const Speakers = () => {
   return (
@@ -23,7 +25,7 @@ const Speakers = () => {
 					<h2 className="text-transform: uppercase text-[28px] font-bold tracking-[1px] text-center">
 						zx9
 						<span className="block">
-							speakers
+							speaker
 						</span>
 					</h2>
 					<p className="font-medium leading-[25px] text-center text-[15px] opacity-50">
@@ -35,9 +37,11 @@ const Speakers = () => {
 						possibilities for more pleasing
 						and practical audio setups.
 					</p>
-					<button className="w-[160px] h-[48px] bg-main-orange text-white text-transform: uppercase text-[13px] font-bold tracking-[1px]">
-						see product
-					</button>
+					<Link to="/product/zx9-speaker">
+						<button className="w-[160px] h-[48px] bg-main-orange text-white text-transform: uppercase text-[13px] font-bold tracking-[1px]">
+							see product
+						</button>
+					</Link>
 				</div>
 			</div>
 
@@ -63,9 +67,11 @@ const Speakers = () => {
 						line powered speakers for home
 						or studio use.
 					</p>
-					<button className="w-[160px] h-[48px] bg-main-orange text-white text-transform: uppercase text-[13px] font-bold tracking-[1px]">
-						see product
-					</button>
+					<Link to="/product/zx7-speaker">
+						<button className="w-[160px] h-[48px] bg-main-orange text-white text-transform: uppercase text-[13px] font-bold tracking-[1px]">
+							see product
+						</button>
+					</Link>
 				</div>
 			</div>
 			<Items />

@@ -1,13 +1,20 @@
-import speakerNoBg from "../assets/home/desktop/image-speaker-zx9.png"
-import earphonesImg from "../assets/home/mobile/image-earphones-yx1.jpg"
-import Items from "../components/Items"
+import speakerNoBg from "/assets/home/desktop/image-speaker-zx9.png";
+import earphonesImg from "/assets/home/mobile/image-earphones-yx1.jpg";
+import Items from "../components/Items";
+import speakerBg from "/assets/home/mobile/image-speaker-zx7.jpg";
+import heroBgMobile from "/assets/home/mobile/image-header.jpg";
+import { Link } from "react-router-dom";
 
 const HomePage = () => {
 	return (
 		<div className="">
-
-			<div className="bg-heroMobile h-[600px] w-full bg-cover flex place-content-center">
-				<div className="text-white flex flex-col items-center w-[328px] h-[290px] mt-[198px] gap-4">
+			<div className="h-[600px] w-full flex place-content-center relative">
+				<img
+					src={heroBgMobile}
+					alt="hero image"
+					className="absolute w-full h-[600px]"
+				/>
+				<div className="text-white flex flex-col items-center w-[328px] h-[290px] mt-[198px] gap-4 z-10">
 					<h1 className="tracking-[0.5em] text-transform: uppercase text-sm font-thin opacity-50">
 						New Product
 					</h1>
@@ -23,13 +30,15 @@ const HomePage = () => {
 						quality made for the passionate
 						music enthusiast.
 					</p>
-					<button className="text-transform: uppercase text-sm w-[160px] h-[48px] bg-main-orange tracking-[1px]">
-						see product
-					</button>
+					<Link to="/product/xx99-mark-two-headphones">
+						<button className="w-[160px] h-[48px] bg-main-orange text-white text-transform: uppercase text-[13px] font-bold tracking-[1px]">
+							see product
+						</button>
+					</Link>
 				</div>
 			</div>
 
-      <Items />
+			<Items />
 
 			<div className="relative">
 				<div className="w-[558px] h-[558px] rounded-full border border-white absolute -left-24"></div>
@@ -53,19 +62,28 @@ const HomePage = () => {
 					phenomenally built to deliver truly
 					remarkable sound.
 				</p>
-				<button className="w-[160px] h-[48px] bg-black text-transform: uppercase mt-6 tracking-[1px]">
-					see product
-				</button>
+				<Link to="/product/zx9-speaker">
+					<button className="w-[160px] h-[48px] bg-black text-transform: uppercase mt-6 tracking-[1px]">
+						see product
+					</button>
+				</Link>
 			</div>
 
-			<div className="w-[327px] h-[320px] bg-speakerBg bg-cover mx-auto my-6 rounded-lg flex items-center">
-				<div className="flex flex-col w-[210px] h-[118px] justify-between ml-6 ">
+			<div className="w-[327px] h-[320px] mx-auto my-6 flex items-center relative">
+				<img
+					src={speakerBg}
+					alt="zx7 speaker"
+					className="w-[327px] h-[320px] absolute rounded-lg"
+				/>
+				<div className="flex flex-col w-[210px] h-[118px] justify-between ml-6 z-10">
 					<p className="text-transform: uppercase text-[28px] font-bold tracking-[2px]">
 						zx7 speaker
 					</p>
-					<button className="text-transform: uppercase w-[160px] h-[48px] border border-black text-[13px] font-bold ml-[1px] tracking-[1px]">
-						see product
-					</button>
+					<Link to="/product/zx7-speaker">
+						<button className="text-transform: uppercase w-[160px] h-[48px] border border-black text-[13px] font-bold ml-[1px] tracking-[1px]">
+							see product
+						</button>
+					</Link>
 				</div>
 			</div>
 
@@ -80,9 +98,11 @@ const HomePage = () => {
 						<h3 className="text-transform: uppercase font-bold text-[28px] tracking-[2px]">
 							yx1 earphones
 						</h3>
-						<button className="text-transform: uppercase w-[160px] h-[48px] border border-black ml-[1px] tracking-[1px] font-bold text-[13px]">
+						<Link to="/product/yx1-earphones">
+							<button className="text-transform: uppercase w-[160px] h-[48px] border border-black ml-[1px] tracking-[1px] font-bold text-[13px]">
 							see product
-						</button>
+							</button>
+						</Link>
 					</div>
 				</div>
 			</div>

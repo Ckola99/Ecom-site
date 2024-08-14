@@ -1,7 +1,7 @@
-import headsets from "../assets/shared/desktop/image-category-thumbnail-headphones.png";
-import speaker from "../assets/shared/desktop/image-category-thumbnail-speakers.png";
-import earphones from "../assets/shared/desktop/image-category-thumbnail-earphones.png";
-import arrow from "../assets/shared/desktop/icon-arrow-right.svg";
+import headsets from "/assets/shared/desktop/image-category-thumbnail-headphones.png";
+import speaker from "/assets/shared/desktop/image-category-thumbnail-speakers.png";
+import earphones from "/assets/shared/desktop/image-category-thumbnail-earphones.png";
+import arrow from "/assets/shared/desktop/icon-arrow-right.svg";
 import { Link } from "react-router-dom";
 
 const Items = () => {
@@ -17,16 +17,18 @@ const Items = () => {
 					<h3 className="text-transform: uppercase font-bold text-base tracking-[1.07px] pt-[77px]">
 						headphones
 					</h3>
-					<div className="flex items-center mt-[20px]">
-						<p className="font-bold text-transform: uppercase opacity-50 ">
-							shop
-						</p>
-						<img
-							src={arrow}
-							alt="arrow"
-							className="w-[5px] h-[10px] ml-[13px]"
-						/>
-					</div>
+					<Link to="/headphones">
+						<button className="flex items-center mt-[20px]">
+							<p className="font-bold text-transform: uppercase opacity-50 ">
+								shop
+							</p>
+							<img
+								src={arrow}
+								alt="arrow"
+								className="w-[5px] h-[10px] ml-[13px]"
+							/>
+						</button>
+					</Link>
 				</div>
 			</div>
 
@@ -40,16 +42,18 @@ const Items = () => {
 					<h3 className="text-transform: uppercase font-bold text-base tracking-[1.07px] pt-[77px]">
 						speakers
 					</h3>
-					<div className="flex items-center mt-[20px]">
-						<p className="font-bold text-transform: uppercase opacity-50 ">
-							shop
-						</p>
-						<img
-							src={arrow}
-							alt="arrow"
-							className="w-[5px] h-[10px] ml-[13px]"
-						/>
-					</div>
+					<Link to="/speakers">
+						<button className="flex items-center mt-[20px]">
+							<p className="font-bold text-transform: uppercase opacity-50 ">
+								shop
+							</p>
+							<img
+								src={arrow}
+								alt="arrow"
+								className="w-[5px] h-[10px] ml-[13px]"
+							/>
+						</button>
+					</Link>
 				</div>
 			</div>
 
@@ -63,16 +67,18 @@ const Items = () => {
 					<h3 className="text-transform: uppercase font-bold text-base tracking-[1.07px] pt-[77px]">
 						earphones
 					</h3>
-					<div className="flex items-center mt-[20px]">
-						<p className="font-bold text-transform: uppercase opacity-50 ">
-							shop
-						</p>
-						<img
-							src={arrow}
-							alt="arrow"
-							className="w-[5px] h-[10px] ml-[13px]"
-						/>
-					</div>
+					<Link to="/earphones">
+						<button className="flex items-center mt-[20px]">
+							<p className="font-bold text-transform: uppercase opacity-50 ">
+								shop
+							</p>
+							<img
+								src={arrow}
+								alt="arrow"
+								className="w-[5px] h-[10px] ml-[13px]"
+							/>
+						</button>
+					</Link>
 				</div>
 			</div>
 		</div>

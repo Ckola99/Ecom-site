@@ -1,7 +1,7 @@
 import Items from "../components/Items"
-import headphones from "../assets/product-xx99-mark-two-headphones/mobile/image-category-page-preview.jpg"
-import xx99 from "../assets/product-xx99-mark-one-headphones/mobile/image-category-page-preview.jpg";
-import xx59 from "../assets/product-xx59-headphones/mobile/image-category-page-preview.jpg";
+import headphones from "/assets/product-xx99-mark-two-headphones/mobile/image-category-page-preview.jpg"
+import xx99 from "/assets/product-xx99-mark-one-headphones/mobile/image-category-page-preview.jpg";
+import xx59 from "/assets/product-xx59-headphones/mobile/image-category-page-preview.jpg";
 import { Link } from "react-router-dom";
 
 const Headphones = () => {
@@ -67,9 +67,11 @@ const Headphones = () => {
 						and music aficionados alike in
 						studios and on the go.
 					</p>
-					<button className="w-[160px] h-[48px] bg-main-orange text-white text-transform: uppercase text-[13px] font-bold tracking-[1px]">
-						see product
-					</button>
+					<Link to="/product/xx99-mark-one-headphones">
+						<button className="w-[160px] h-[48px] bg-main-orange text-white text-transform: uppercase text-[13px] font-bold tracking-[1px]">
+							see product
+						</button>
+					</Link>
 				</div>
 			</div>
 
@@ -95,9 +97,11 @@ const Headphones = () => {
 						headset is a brilliant companion
 						at home or on the move.
 					</p>
-					<button className="w-[160px] h-[48px] bg-main-orange text-white text-transform: uppercase text-[13px] font-bold tracking-[1px]">
-						see product
-					</button>
+					<Link to="/product/xx59-headphones">
+						<button className="w-[160px] h-[48px] bg-main-orange text-white text-transform: uppercase text-[13px] font-bold tracking-[1px]">
+							see product
+						</button>
+					</Link>
 				</div>
 			</div>
 			<Items />

@@ -7,8 +7,8 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        'heroMobile': "url('/src/assets/home/mobile/image-header.jpg')",
-        'speakerBg': "url('/src/assets/home/mobile/image-speaker-zx7.jpg')"
+        'heroMobile': "url('/assets/home/mobile/image-header.jpg')",
+        'speakerBg': "url('/assets/home/mobile/image-speaker-zx7.jpg')"
       },
       fontFamily: {
         manrope: ['Manrope', 'sans-serif'],

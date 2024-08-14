@@ -1,5 +1,5 @@
 import Items from "../components/Items"
-import zx9 from "../assets/product-yx1-earphones/mobile/image-category-page-preview.jpg";
+import zx9 from "/assets/product-yx1-earphones/mobile/image-category-page-preview.jpg";
 
 const Earphones = () => {
   return (

@@ -1,11 +1,11 @@
-import "./index.css";
+import "../index.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import HomePage from "./pages/HomePage";
-import Headphones from "./pages/Headphones";
-import Speakers from "./pages/Speakers";
-import Earphones from "./pages/Earphones";
-import Layout from "./components/Layout";
-import ProductPage from "./pages/ProductPage";
+import HomePage from "../pages/HomePage";
+import Headphones from "../pages/Headphones";
+import Speakers from "../pages/Speakers";
+import Earphones from "../pages/Earphones";
+import Layout from "../components/Layout";
+import ProductPage from "../pages/ProductPage";
 
 function App() {
 	return (
