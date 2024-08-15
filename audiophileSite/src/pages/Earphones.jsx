@@ -1,5 +1,6 @@
 import Items from "../components/Items"
 import zx9 from "/assets/product-yx1-earphones/mobile/image-category-page-preview.jpg";
+import { Link } from "react-router-dom"
 
 const Earphones = () => {
   return (
@@ -35,9 +36,11 @@ const Earphones = () => {
 						active noise cancellation
 						feature.
 					</p>
-					<button className="w-[160px] h-[48px] bg-main-orange text-white text-transform: uppercase text-[13px] font-bold tracking-[1px]">
-						see product
-					</button>
+					<Link to="/product/yx1-earphones">
+						<button className="w-[160px] h-[48px] bg-main-orange text-white text-transform: uppercase text-[13px] font-bold tracking-[1px]">
+							see product
+						</button>
+					</Link>
 				</div>
 			</div>
 

@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Suggestions = ({ product }) => {
 	return (
 		<div className="w-[327px] h-[983px] mb-24 mt-[140px] mx-auto flex flex-col items-center justify-between">
@@ -8,6 +10,7 @@ const Suggestions = ({ product }) => {
 			{product.others.map((product) => {
 
 				const productImage = `/assets/shared/mobile/image-${product.slug}.jpg`;
+				const productLink = `/product/${product.slug}`;
 
 				return (
 					<div
@@ -25,10 +28,14 @@ const Suggestions = ({ product }) => {
 								className=""
 							/>
 						</div>
-						<h2 className="text-2xl font-bold tracking-[1.71px]">{product.name}</h2>
-						<button className="w-[160px] h-[48px] bg-main-orange text-white text-transform: uppercase text-[13px] font-bold tracking-[1px]">
-							see product
-						</button>
+						<h2 className="text-2xl font-bold tracking-[1.71px]">
+							{product.name}
+						</h2>
+						<Link to={productLink} >
+							<button className="w-[160px] h-[48px] bg-main-orange text-white text-transform: uppercase text-[13px] font-bold tracking-[1px]">
+								see product
+							</button>
+						</Link>
 					</div>
 				);
 			})}
