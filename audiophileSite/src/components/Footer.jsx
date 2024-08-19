@@ -4,39 +4,46 @@ import logo from "/assets/shared/desktop/logo.svg";
 import instaLogo from "/assets/shared/desktop/icon-instagram.svg";
 import facebookLogo from "/assets/shared/desktop/icon-facebook.svg";
 import twitterLogo from "/assets/shared/desktop/icon-twitter.svg";
+import {useLocation} from 'react-router-dom';
 
 const Footer = () => {
+	const location = useLocation();
+
 	return (
 		<div className="">
-			<div className="mt-[121px] h-[698px] w-[327px] mx-auto">
-				<img
-					src={bestGear}
-					alt=""
-					className="w-[327px] h-[300px] rounded-lg"
-				/>
-				<h3 className="text-[28px] text-center font-bold text-transform: uppercase my-10">
-					Bringing you the{" "}
-					<span className="block">
-						<span className="text-main-orange">
-							best
-						</span>{" "}
-						audio gear
-					</span>
-				</h3>
-				<p className="text-center font-medium text-[15px] opacity-50">
-					Located at the heart of New York City,
-					Audiophile is the premier store for high
-					end headphones, earphones, speakers, and
-					audio accessories. We have a large
-					showroom and luxury demonstration rooms
-					available for you to browse and
-					experience a wide range of our products.
-					Stop by our store to meet some of the
-					fantastic people who make Audiophile the
-					best place to buy your portable audio
-					equipment.
-				</p>
-			</div>
+			{location.pathname !== "/checkout" && (
+				<div className="mt-[121px] h-[698px] w-[327px] mx-auto">
+					<img
+						src={bestGear}
+						alt=""
+						className="w-[327px] h-[300px] rounded-lg"
+					/>
+					<h3 className="text-[28px] text-center font-bold text-transform: uppercase my-10">
+						Bringing you the{" "}
+						<span className="block">
+							<span className="text-main-orange">
+								best
+							</span>{" "}
+							audio gear
+						</span>
+					</h3>
+					<p className="text-center font-medium text-[15px] opacity-50">
+						Located at the heart of New York
+						City, Audiophile is the premier
+						store for high end headphones,
+						earphones, speakers, and audio
+						accessories. We have a large
+						showroom and luxury
+						demonstration rooms available
+						for you to browse and experience
+						a wide range of our products.
+						Stop by our store to meet some
+						of the fantastic people who make
+						Audiophile the best place to buy
+						your portable audio equipment.
+					</p>
+				</div>
+			)}
 
 			<div className="w-full h-[654px] bg-black mt-[121px] flex flex-col items-center text-white">
 				<div className="w-[101px] h-[4px] bg-main-orange"></div>

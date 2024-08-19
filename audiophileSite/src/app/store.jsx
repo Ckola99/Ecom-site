@@ -1,10 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
-import dropdownReducer from "../features/DropdownFeature/DropdownSlice"
-
+import dropdownReducer from "../features/DropdownFeature/DropdownSlice";
+import addToCartReducer from "../features/AddToCartFeature/AddToCartSlice";
+import cartModalReducer from "../features/CartModalFeature/CartModalSlice";
 
 const store = configureStore({
 	reducer: {
-		dropdownMenu: dropdownReducer,
+		dropdown: dropdownReducer,
+		addToCart: addToCartReducer,
+		cartModal: cartModalReducer,
 	},
 });
 

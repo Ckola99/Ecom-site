@@ -6,6 +6,7 @@ import Speakers from "../pages/Speakers";
 import Earphones from "../pages/Earphones";
 import Layout from "../components/Layout";
 import ProductPage from "../pages/ProductPage";
+import Checkout from "../pages/Checkout";
 
 function App() {
 	return (
@@ -28,6 +29,10 @@ function App() {
 					<Route
 						path="product/:productSlug"
 						element={<ProductPage />}
+					/>
+					<Route
+						path="checkout"
+						element={<Checkout />}
 					/>
 				</Route>
 			</Routes>

@@ -4,7 +4,6 @@ import AddToCart from "../components/AddToCart";
 import Items from "../components/Items";
 import Suggestions from "../components/Suggestions";
 
-
 const ProductPage = () => {
 
 	const { productSlug } = useParams();
@@ -22,7 +21,7 @@ const ProductPage = () => {
 
 	return (
 		<div>
-			<button onClick={() => navigate(-1)} className="text-[15px] font-medium leading-[25px] ml-[25px] mt-[25px]">
+			<button onClick={() => navigate(-1)} className="text-[15px] font-medium leading-[25px] ml-[25px] mt-[25px] opacity-50">
 				Go Back
 			</button>
 			<div className="mt-[30px] w-[327px] h-auto mx-auto flex flex-col gap-7">
@@ -41,7 +40,7 @@ const ProductPage = () => {
 					{product.description}
 				</p>
 				<p className="font-bold ">${" "}{formattedPrice}</p>
-				<AddToCart />
+				<AddToCart product={product}/>
 			</div>
 			<div className="w-[327px] h-[515px] flex flex-col mx-auto my-[70px] justify-between">
 				<h2 className="font-bold text-2xl leading-[36px] tracking-[0.86px] text-transform: uppercase">

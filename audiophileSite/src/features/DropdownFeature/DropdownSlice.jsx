@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit"
 
 const initialState = {
-	idOpen: false,
+	isOpen: false,
 };
 
 const dropdownSlice = createSlice({

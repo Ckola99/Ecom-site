@@ -3,9 +3,26 @@ import speaker from "/assets/shared/desktop/image-category-thumbnail-speakers.pn
 import earphones from "/assets/shared/desktop/image-category-thumbnail-earphones.png";
 import arrow from "/assets/shared/desktop/icon-arrow-right.svg";
 import { Link } from "react-router-dom";
+import {
+	selectState,
+	openDropdown,
+	closeDropdown,
+} from "../features/DropdownFeature/DropdownSlice";
+import { useSelector, useDispatch } from "react-redux";
 
 const Items = () => {
-  return (
+	const isOpen = useSelector(selectState);
+	const dispatch = useDispatch();
+
+	const handleClick = () => {
+		if (isOpen) {
+			dispatch(closeDropdown());
+		} else {
+			dispatch(openDropdown());
+		}
+	};
+
+	return (
 		<div className="w-[327px] h-[683px] grid mx-auto mt-10 gap-2">
 			<div className="relative w-[327px] h-[217px] ">
 				<img
@@ -18,7 +35,10 @@ const Items = () => {
 						headphones
 					</h3>
 					<Link to="/headphones">
-						<button className="flex items-center mt-[20px]">
+						<button
+							onMouseDown={handleClick}
+							className="flex items-center mt-[20px]"
+						>
 							<p className="font-bold text-transform: uppercase opacity-50 ">
 								shop
 							</p>
@@ -82,6 +102,6 @@ const Items = () => {
 				</div>
 			</div>
 		</div>
-  );
-}
-export default Items
+	);
+};
+export default Items;
