@@ -12,7 +12,7 @@ const Footer = () => {
 	return (
 		<div className="">
 			{location.pathname !== "/checkout" && (
-				<div className="mt-[121px] h-[698px] w-[327px] mx-auto">
+				<div className="my-[121px] h-[698px] w-[327px] mx-auto">
 					<img
 						src={bestGear}
 						alt=""
@@ -45,7 +45,7 @@ const Footer = () => {
 				</div>
 			)}
 
-			<div className="w-full h-[654px] bg-black mt-[121px] flex flex-col items-center text-white">
+			<div className="w-full h-[654px] bg-black flex flex-col items-center text-white">
 				<div className="w-[101px] h-[4px] bg-main-orange"></div>
 				<img
 					src={logo}
