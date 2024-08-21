@@ -15,7 +15,7 @@ const Checkout = () => {
   const shipping = 50;
 
 	return (
-		<div className="bg-[#FAFAFA] h-[2200px]">
+		<div className="bg-[#FAFAFA] pb-20">
 			<button
 				onClick={() => navigate(-1)}
 				className="text-[15px] font-medium leading-[25px] ml-[25px] my-[25px] opacity-50"
@@ -23,7 +23,7 @@ const Checkout = () => {
 				Go Back
 			</button>
       <CheckoutForm />
-			<div className="bg-white rounded-lg w-[327px] mx-auto mt-10 h-[612px]">
+			<div className="bg-white rounded-lg w-[327px] mx-auto mt-10 h-auto pb-10">
 				<h1 className="text-transform: uppercase py-7 px-5 font-bold text-[18px]">
 					summary
 				</h1>
@@ -85,7 +85,7 @@ const Checkout = () => {
 
           <p className="text-transform: uppercase flex justify-between font-bold"><span className="font-medium opacity-50">Total</span>${" "}{totalAmount.toLocaleString()}</p>
 
-          <p className="text-transform: uppercase font-bold flex justify-between"><span className="font-medium opacity-50">shipping</span>${" "}{shipping}</p>
+          {cart.length > 0 && ( <p className="text-transform: uppercase font-bold flex justify-between"><span className="font-medium opacity-50">shipping</span>${" "}{shipping}</p> ) }
 
           <p className="text-transform: uppercase flex justify-between font-bold"><span className="font-medium opacity-50">vat (included)</span>${" "}{(Number((0.20 * totalAmount).toFixed(0))).toLocaleString()}</p>
 
@@ -93,7 +93,7 @@ const Checkout = () => {
 
 
 
-         <p className="text-transform: uppercase flex justify-between font-bold px-5 text-main-orange"><span className="font-medium text-black opacity-50">Grand total</span>${" "}{(totalAmount + shipping).toLocaleString()}</p>
+         <p className="text-transform: uppercase flex justify-between font-bold px-5 text-main-orange"><span className="font-medium text-black opacity-50">Grand total</span>${" "}{cart.length > 0 ? ((totalAmount + shipping).toLocaleString()) : 0}</p>
 
 
          <button className="w-[285px] h-[48px] bg-main-orange text-white text-transform: uppercase text-[13px] font-bold tracking-[1px] mx-[21px] mt-10">
