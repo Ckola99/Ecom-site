@@ -1,9 +1,15 @@
 import { useNavigate } from "react-router-dom";
 import { selectItems } from "../features/AddToCartFeature/AddToCartSlice";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
+import {
+	openConfirmationModal
+} from "../features/ConfirmationFeature/ConfirmationSlice";
+import ConfirmationModal from "../components/ConfirmationModal"
+import { setCheckoutFormData } from "../features/CheckoutFeature/CheckoutSlice";
+
 
 // validation schema
 const validationSchema = yup
@@ -107,12 +113,20 @@ const Checkout = () => {
 
 	const submitForm = (data) => {
 		console.log("data", data);
+		dispatch(setCheckoutFormData())
 	};
 
 	const paymentMethod = watch("paymentMethod");
+	const dispatch = useDispatch();
+
+	const handleClick = () => {
+		handleSubmit(submitForm);
+		dispatch(openConfirmationModal());
+	}
 
 	return (
 		<div className="bg-[#FAFAFA] pb-20">
+			<ConfirmationModal />
 			<button
 				onClick={() => navigate(-1)}
 				className="text-[15px] font-medium leading-[25px] ml-[25px] my-[25px] opacity-50"
@@ -364,7 +378,7 @@ const Checkout = () => {
 				</p>
 
 				<button
-					onClick={handleSubmit(submitForm)}
+					onClick={handleClick}
 					className={`w-[285px] h-[48px] ${
 						cart.length === 0
 							? "bg-white text-black border border-black cursor-not-allowed"

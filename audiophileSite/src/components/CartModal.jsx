@@ -144,7 +144,12 @@ const CartModal = ({ isOpen, handleCloseModal }) => {
 				<Link to="checkout">
 					<button
 						onClick={handleCloseModal}
-						className="w-full h-[48px] bg-main-orange text-white text-transform: uppercase text-[13px] font-bold tracking-[1px] mt-4"
+						className={`w-full h-[48px] text-transform: uppercase text-[13px] font-bold tracking-[1px] mt-4 ${
+							itemsInCart.length === 0
+								? "bg-white text-black border border-black cursor-not-allowed"
+								: "bg-main-orange cursor-pointer text-white"
+						}`}
+						disabled={itemsInCart.length === 0}
 					>
 						Checkout
 					</button>
@@ -155,4 +160,3 @@ const CartModal = ({ isOpen, handleCloseModal }) => {
 };
 
 export default CartModal;
-

@@ -10,12 +10,14 @@ import {
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
+
 const Navbar = ({ openCart }) => {
 	const isOpen = useSelector(selectState);
 	const dispatch = useDispatch();
 
 	return (
 		<div className="">
+			<DropdownMenu />
 			<div
 				className={`flex justify-center h-[58px] border-b items-center bg-black ${
 					isOpen ? "z-50" : "z-10"
@@ -26,6 +28,7 @@ const Navbar = ({ openCart }) => {
 						src={hamburger}
 						alt="hamburger icon"
 						className="w-[16px] h-[15px]"
+						onClick={() => dispatch(openDropdown())}
 					/>
 					<Link to='/'>
 						<img

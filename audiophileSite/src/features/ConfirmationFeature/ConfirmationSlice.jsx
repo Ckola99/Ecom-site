@@ -1,22 +1,22 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-	isOpen: false,
+	confirmed: false,
 };
 
 const confirmationSlice = createSlice({
 	name: "confirmationModal",
 	initialState,
 	reducers: {
-		closeModal: (state) => {
-			state.isOpen = false;
+		closeConfirmationModal: (state) => {
+			state.confirmed = false;
 		},
-		openModal: (state) => {
-			state.isOpen = true;
+		openConfirmationModal: (state) => {
+			state.confirmed = true;
 		}
 	}
 })
 
-export const selectState = (state) => state.confirmationModal.isOpen;
-export const { openModal, closeModal } = confirmationSlice.actions;
+export const selectState = (state) => state.confirmationModal.confirmed;
+export const { openConfirmationModal, closeConfirmationModal } = confirmationSlice.actions;
 export default confirmationSlice.reducer;
