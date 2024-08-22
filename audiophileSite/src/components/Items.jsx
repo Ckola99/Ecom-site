@@ -23,20 +23,22 @@ const Items = () => {
 	};
 
 	return (
-		<div className="w-[327px] h-[683px] grid mx-auto mt-10 gap-2">
-			<div className="relative w-[327px] h-[217px] ">
+		<div className="w-[327px] h-[683px] grid mx-auto mt-10 gap-2 md:grid-cols-3 md:w-[689px] md:h-[217px] md:mx-auto">
+			<div className="relative w-[327px] h-[217px] md:w-[223px]">
 				<img
 					src={headsets}
 					alt="mark one headsets"
-					className="h-[134px] absolute left-[95px]"
+					className="h-[134px] absolute left-1/2 -translate-x-1/2"
 				/>
-				<div className="bg-second-gray w-[327px] h-[165px] rounded-lg mt-[52px] flex flex-col items-center">
+				<div className="bg-second-gray w-[327px] h-[165px] rounded-lg mt-[52px] flex flex-col items-center md:w-[223px]">
 					<h3 className="text-transform: uppercase font-bold text-base tracking-[1.07px] pt-[77px]">
 						headphones
 					</h3>
 					<Link to="/headphones">
 						<button
-							onMouseDown={handleClick}
+							onMouseDown={
+								handleClick
+							}
 							className="flex items-center mt-[20px]"
 						>
 							<p className="font-bold text-transform: uppercase opacity-50 ">
@@ -56,9 +58,9 @@ const Items = () => {
 				<img
 					src={speaker}
 					alt="speakers"
-					className="h-[144px] absolute left-[85px]"
+					className="h-[144px] absolute left-1/2 -translate-x-1/2 md:left-[110px]"
 				/>
-				<div className="bg-second-gray w-[327px] h-[165px] rounded-lg mt-[52px] flex flex-col items-center">
+				<div className="bg-second-gray w-[327px] h-[165px] rounded-lg mt-[52px] flex flex-col items-center md:w-[223px]">
 					<h3 className="text-transform: uppercase font-bold text-base tracking-[1.07px] pt-[77px]">
 						speakers
 					</h3>
@@ -81,9 +83,9 @@ const Items = () => {
 				<img
 					src={earphones}
 					alt="earphones"
-					className="h-[154px] absolute left-[70px]"
+					className="h-[154px] absolute left-1/2 -translate-x-1/2 md:left-[115px]"
 				/>
-				<div className="bg-second-gray w-[327px] h-[165px] rounded-lg mt-[52px] flex flex-col items-center">
+				<div className="bg-second-gray w-[327px] h-[165px] rounded-lg mt-[52px] flex flex-col items-center md:w-[223px]">
 					<h3 className="text-transform: uppercase font-bold text-base tracking-[1.07px] pt-[77px]">
 						earphones
 					</h3>
