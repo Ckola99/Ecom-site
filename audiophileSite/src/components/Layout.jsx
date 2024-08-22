@@ -29,7 +29,7 @@ const Layout = () => {
 			<ScrollToTop />
 			<Navbar openCart = {handleOpenModal}/>
 			<CartModal isOpen={isModalOpen} handleCloseModal={handleCloseModal}/>
-			<main>
+			<main className="mt-[58px]">
 				<Outlet add={addItem} remove={removeItem}/>
 			</main>
 			<Footer />

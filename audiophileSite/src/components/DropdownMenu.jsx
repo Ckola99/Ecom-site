@@ -10,10 +10,16 @@ const DropdownMenu = () => {
   const dropDownOpen = useSelector(selectState);
   const dispatch = useDispatch();
 
-  return dropDownOpen && (
-    <div className="fixed inset-0 flex bg-gray-800 bg-opacity-50 transition-colors z-[11]" onClick={() => dispatch(closeDropdown())}>
-      <div className={`w-full h-[calc(100vh - 58px)] mx-auto mt-[58px] bg-white flex flex-col items-center overflow-auto py-8`}>
-        <div className="flex flex-col gap-8 items-center">
+  if (!dropDownOpen) return null;
+
+  return (
+    <>
+      <div
+        className="fixed inset-0 bg-gray-800 bg-opacity-50 transition-colors z-20"
+        onClick={() => dispatch(closeDropdown())}
+      ></div>
+      <div className="fixed inset-x-0 top-[58px] bottom-0 z-50 bg-white overflow-auto">
+        <div className="flex flex-col gap-8 items-center py-8">
           <CategoryItem
             image={headsets}
             alt="mark one headsets"
@@ -34,7 +40,7 @@ const DropdownMenu = () => {
           />
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
@@ -43,7 +49,7 @@ const CategoryItem = ({ image, alt, title, link }) => (
     <img
       src={image}
       alt={alt}
-      className="h-[120px] absolute left-1/2 transform -translate-x-1/2"
+      className="h-[120px] absolute left-1/2 transform -translate-x-1/2 top-0"
     />
     <div className="bg-second-gray w-full h-[150px] rounded-lg mt-[50px] flex flex-col items-center">
       <h3 className="text-transform: uppercase font-bold text-base tracking-[1.07px] pt-[70px]">
