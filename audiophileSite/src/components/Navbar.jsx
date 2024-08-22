@@ -7,18 +7,28 @@ import {
   openDropdown,
   closeDropdown,
 } from "../features/DropdownFeature/DropdownSlice";
+import { selectCartState } from "../features/CartModalFeature/CartModalSlice"
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
-const Navbar = ({ openCart }) => {
+const Navbar = ({ openCart, closeCart }) => {
   const isOpen = useSelector(selectState);
   const dispatch = useDispatch();
+  const cartIsOpen = useSelector(selectCartState)
 
   const handleClick = () => {
 	if(isOpen) {
 		dispatch(closeDropdown())
 	} else {
 		dispatch(openDropdown())
+	}
+  }
+
+  const handleCartClick = () => {
+	if(cartIsOpen){
+		dispatch(closeCart)
+	} else {
+		dispatch(openCart)
 	}
   }
 
@@ -46,7 +56,7 @@ const Navbar = ({ openCart }) => {
               src={cart}
               alt="cart icon"
               className="w-[23px] h-[20px] cursor-pointer"
-              onClick={openCart}
+              onClick={handleCartClick}
             />
           </div>
         </div>

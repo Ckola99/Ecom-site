@@ -17,6 +17,6 @@ const cartModalSlice = createSlice({
 	}
 })
 
-export const selectState = (state) => state.cartModal.isOpen;
+export const selectCartState = (state) => state.cartModal.isOpen;
 export const { openModal, closeModal } = cartModalSlice.actions;
 export default cartModalSlice.reducer;

@@ -9,11 +9,11 @@ import {
 	closeModal,
 } from "../features/CartModalFeature/CartModalSlice";
 import { addItem, removeItem,  } from "../features/AddToCartFeature/AddToCartSlice";
-import { selectState } from "../features/CartModalFeature/CartModalSlice";
+import { selectCartState } from "../features/CartModalFeature/CartModalSlice";
 
 const Layout = () => {
 
-	const isModalOpen = useSelector(selectState);
+	const isModalOpen = useSelector(selectCartState);
 	const dispatch = useDispatch();
 
 	const handleOpenModal = () => {
@@ -27,7 +27,7 @@ const Layout = () => {
 	return (
 		<div>
 			<ScrollToTop />
-			<Navbar openCart = {handleOpenModal}/>
+			<Navbar openCart = {handleOpenModal} closeCart={handleCloseModal}/>
 			<CartModal isOpen={isModalOpen} handleCloseModal={handleCloseModal}/>
 			<main className="mt-[58px]">
 				<Outlet add={addItem} remove={removeItem}/>
