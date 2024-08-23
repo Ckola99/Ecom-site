@@ -85,9 +85,11 @@ const HomePage = () => {
 						are phenomenally built to
 						deliver truly remarkable sound.
 					</p>
-						<button onClick={() => navigate('/product/zx9-speaker')} className="w-[160px] h-[48px] bg-black text-transform: uppercase tracking-[1px] text-[13px]">
+					<Link to="/product/zx9-speaker">
+						<button className="w-[160px] h-[48px] bg-black text-transform: uppercase tracking-[1px] text-[13px] z-10 relative">
 							see product
 						</button>
+					</Link>
 				</div>
 			</div>
 
