@@ -3,7 +3,7 @@ import dropdownReducer from "../features/DropdownFeature/DropdownSlice";
 import addToCartReducer from "../features/AddToCartFeature/AddToCartSlice";
 import cartModalReducer from "../features/CartModalFeature/CartModalSlice";
 import confirmationReducer from "../features/ConfirmationFeature/ConfirmationSlice";
-
+import checkoutReducer from "../features/CheckoutFeature/CheckoutSlice";
 
 const store = configureStore({
 	reducer: {
@@ -11,6 +11,7 @@ const store = configureStore({
 		addToCart: addToCartReducer,
 		cartModal: cartModalReducer,
 		confirmationModal: confirmationReducer,
+		checkout: checkoutReducer
 	},
 });
 

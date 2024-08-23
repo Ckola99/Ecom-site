@@ -3,6 +3,7 @@ import earphonesImg from "/assets/home/mobile/image-earphones-yx1.jpg";
 import Items from "../components/Items";
 import speakerBg from "/assets/home/mobile/image-speaker-zx7.jpg";
 import heroBgMobile from "/assets/home/mobile/image-header.jpg";
+import heroBgTablet from "/assets/home/tablet/image-header.jpg";
 import { Link } from "react-router-dom";
 import zx7bg from "/assets/home/tablet/image-speaker-zx7.jpg"
 import earphonesImgTablet from "/assets/home/tablet/image-earphones-yx1.jpg";
@@ -34,7 +35,7 @@ const HomePage = () => {
 		<div className="">
 			<div className="h-[600px] w-full flex place-content-center relative">
 				<img
-					src={heroBgMobile}
+					src={isMobile ? heroBgMobile : heroBgTablet}
 					alt="hero image"
 					className="absolute w-full h-[600px]"
 				/>
