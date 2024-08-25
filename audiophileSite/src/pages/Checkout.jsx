@@ -41,7 +41,7 @@ const Input = ({ label, register, type, errors }) => {
 	const hasError = !!errors[label];
 
 	return (
-		<div className="w-[280px] h-[81px] flex flex-col justify-between">
+		<div className="w-[280px] h-[81px] flex flex-col justify-between md:w-full">
 			<div className=" flex justify-between">
 				<label
 					htmlFor={label}
@@ -76,7 +76,7 @@ const Input = ({ label, register, type, errors }) => {
 
 const RadioButton = ({ label, id, value, register, name, errors }) => {
 	return (
-		<div className="flex items-center mb-2 border border-black rounded-lg w-[280px] h-[56px] focus-within:border focus-within:border-main-orange hover: main-orange">
+		<div className="flex items-center mb-2 border border-black rounded-lg w-[280px] h-[56px] focus-within:border focus-within:border-main-orange hover: main-orange md:w-full">
 			<input
 				type="radio"
 				id={id}
@@ -113,29 +113,34 @@ const Checkout = () => {
 
 	const submitForm = (data) => {
 		console.log("data", data);
-		dispatch(setCheckoutFormData())
+		dispatch(setCheckoutFormData(data))
 	};
 
 	const paymentMethod = watch("paymentMethod");
 	const dispatch = useDispatch();
 
-	const handleClick = () => {
-		handleSubmit(submitForm);
-		dispatch(openConfirmationModal());
-	}
-
+	const handleClick = async () => {
+	// Perform form submission and validation
+	await handleSubmit(async (data) => {
+		// If validation is successful (no errors), proceed
+		if (Object.keys(errors).length === 0) {
+			await submitForm(data);  // Submit the form data
+			dispatch(openConfirmationModal());  // Open the confirmation modal
+		}
+	})();
+};
 	return (
-		<div className="bg-[#FAFAFA] pb-20">
+		<div className="bg-[#FAFAFA] pb-20 flex flex-col items-center">
 			<ConfirmationModal />
 			<button
 				onClick={() => navigate(-1)}
-				className="text-[15px] font-medium leading-[25px] ml-[25px] my-[25px] opacity-50"
+				className="text-[15px] font-medium leading-[25px] ml-[25px] my-[25px] opacity-50 self-start"
 			>
 				Go Back
 			</button>
 
 			<form
-				className="bg-white w-[327px] h-auto mx-auto rounded-lg py-6 px-5"
+				className="bg-white w-[327px] h-auto mx-auto rounded-lg py-6 px-5 md:w-[689px]"
 				onSubmit={handleSubmit(submitForm)}
 			>
 				<h1 className="text-transform: uppercase mb-8 font-bold">
@@ -143,7 +148,7 @@ const Checkout = () => {
 				</h1>
 
 				{/* Billing Details */}
-				<fieldset className="mb-6 flex h-auto flex-col gap-5">
+				<fieldset className="mb-6 flex h-auto flex-col gap-5 md:grid md:grid-cols-2">
 					<legend className="text-transform: uppercase text-main-orange font-bold mb-4">
 						Billing Details
 					</legend>
@@ -180,7 +185,8 @@ const Checkout = () => {
 						type="text"
 						errors={errors}
 					/>
-					<Input
+					<div className="md:grid md:grid-cols-2 gap-5">
+						<Input
 						label="ZIP Code"
 						register={register}
 						type="text"
@@ -198,33 +204,40 @@ const Checkout = () => {
 						type="text"
 						errors={errors}
 					/>
+					</div>
 				</fieldset>
 
 				{/* Payment Details */}
 				<fieldset className="mb-6">
-					<legend className="text-transform: uppercase text-main-orange font-bold mb-4">
-						Payment Details
-					</legend>
 
-					<div>
-						<div className="flex justify-between">
+						<legend className="text-transform: uppercase text-main-orange font-bold mb-4">
+							Payment Details
+						</legend>
+
+
+
+					<div className="md:grid md:grid-cols-2">
+						<div className="">
 							<label className="block font-bold mb-2 text-[12px]">
 								Payment Method
-							</label>
-							{errors.paymentMethod && (
-								<span
-									role="alert"
-									className="text-red-500 font-bold text-[12px]"
-								>
-									{
+						</label>
+							<div className="flex justify-between">
+
+								{errors.paymentMethod && (
+									<span
+										role="alert"
+										className="text-red-500 font-bold text-[12px]"
+									>
+										{
 										errors
 											.paymentMethod
 											.message
-									}
-								</span>
-							)}
+										}
+									</span>
+								)}
+							</div>
 						</div>
-						<div className="flex flex-col gap-2">
+						<div className="flex flex-col gap-2 ">
 							<RadioButton
 								label="e-Money"
 								id="eMoney"
@@ -250,7 +263,7 @@ const Checkout = () => {
 
 					{/* Conditional rendering of e-Money fields */}
 					{paymentMethod === "e-Money" && (
-						<div className="mt-4 flex flex-col gap-5">
+						<div className="mt-4 flex flex-col gap-5 md:flex-row">
 							<Input
 								label="e-Money Number"
 								register={
@@ -272,7 +285,7 @@ const Checkout = () => {
 				</fieldset>
 			</form>
 
-			<div className="bg-white rounded-lg w-[327px] mx-auto mt-10 h-auto pb-10">
+			<div className="bg-white rounded-lg w-[327px] grid justify-self-center mt-10 h-auto p-5 md:w-[689px]">
 				<h1 className="text-transform: uppercase py-7 px-5 font-bold text-[18px]">
 					summary
 				</h1>
@@ -293,6 +306,7 @@ const Checkout = () => {
 								""
 							)
 							.replace(/mark/i, "mk")
+							.replace(/speaker/i, "")
 							.trim();
 
 						return (
@@ -310,7 +324,7 @@ const Checkout = () => {
 										}
 										className="w-[64px] h-[64px] rounded-lg mr-5"
 									/>
-									<p className="font-bold w-[76px] h-[50px] text-[15px]">
+									<p className="font-bold w-[76px] h-[50px] text-[15px] text-transform: uppercase">
 										{
 											formattedName
 										}
@@ -379,11 +393,11 @@ const Checkout = () => {
 
 				<button
 					onClick={handleClick}
-					className={`w-[285px] h-[48px] ${
+					className={`w-[285px] h-[48px] md:w-[623px] ${
 						cart.length === 0
 							? "bg-white text-black border border-black cursor-not-allowed"
 							: "bg-main-orange cursor-pointer text-white"
-					} text-transform: uppercase text-[13px] font-bold tracking-[1px] mx-[21px] mt-10`}
+					} text-transform: uppercase text-[13px] font-bold tracking-[1px] mx-auto mt-10 ${ cart.length && "hover:bg-[#FBAF85]" } mb-5`}
 					disabled={cart.length === 0}
 				>
 					continue & pay

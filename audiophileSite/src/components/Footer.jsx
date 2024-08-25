@@ -78,31 +78,31 @@ const Footer = () => {
 						<li>
 							<Link
 								to="/"
-								className="block hover:underline"
+								className="block hover:text-main-orange"
 							>
 								home
 							</Link>
 						</li>
 						<li>
 							<Link
-								to="headphones"
-								className="block hover:underline"
+								to="/category/headphones"
+								className="block hover:text-main-orange"
 							>
 								headphones
 							</Link>
 						</li>
 						<li>
 							<Link
-								to="speakers"
-								className="block hover:underline"
+								to="/category/speakers"
+								className="block hover:text-main-orange"
 							>
 								speakers
 							</Link>
 						</li>
 						<li>
 							<Link
-								to="earphones"
-								className="block hover:underline"
+								to="/category/earphones"
+								className="block hover:text-main-orange"
 							>
 								earphones
 							</Link>

@@ -26,7 +26,7 @@ const AddToCart = ({ product }) => {
 		<div className="w-[296px] h-[48px] flex justify-between">
 			<div className="w-[120px] h-[48px] bg-second-gray flex justify-around items-center">
 				<button
-					className="opacity-40 font-bold text-[13px] leading-[1px]"
+					className="opacity-40 font-bold text-[13px] leading-[1px] hover:main-orange"
 					onClick={handleRemove}
 				>
 					-
@@ -35,7 +35,7 @@ const AddToCart = ({ product }) => {
 					{cartItem ? cartItem.quantity : 0}
 				</p>
 				<button
-					className="opacity-40 font-bold text-[13px] leading-[1px]"
+					className="opacity-40 font-bold text-[13px] leading-[1px] hover:main-orange"
 					onClick={handleAdd}
 				>
 					+
@@ -45,7 +45,7 @@ const AddToCart = ({ product }) => {
 				className="w-[160px] h-[48px] bg-main-orange flex justify-center items-center"
 				onClick={handleAdd}
 			>
-				<p className="text-white text-transform: uppercase font-bold text-[13px] leading-[1px]">
+				<p className="text-white text-transform: uppercase font-bold text-[13px] leading-[1px] hover:bg-[#FBAF85]">
 					add to cart
 				</p>
 			</button>

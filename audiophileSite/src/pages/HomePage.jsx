@@ -4,21 +4,26 @@ import Items from "../components/Items";
 import speakerBg from "/assets/home/mobile/image-speaker-zx7.jpg";
 import heroBgMobile from "/assets/home/mobile/image-header.jpg";
 import heroBgTablet from "/assets/home/tablet/image-header.jpg";
+import heroBgDesktop from "/assets/home/desktop/image-hero.jpg";
 import { Link } from "react-router-dom";
-import zx7bg from "/assets/home/tablet/image-speaker-zx7.jpg"
+import zx7bg from "/assets/home/tablet/image-speaker-zx7.jpg";
 import earphonesImgTablet from "/assets/home/tablet/image-earphones-yx1.jpg";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-
 const HomePage = () => {
-
-	const [isMobile, setIsMobile] = useState(false);
+	const [screenSize, setScreenSize] = useState("mobile");
 	const navigate = useNavigate();
 
 	useEffect(() => {
 		const handleResize = () => {
-			setIsMobile(window.innerWidth < 768);
+			if (window.innerWidth >= 1024) {
+				setScreenSize("desktop");
+			} else if (window.innerWidth >= 768) {
+				setScreenSize("tablet");
+			} else {
+				setScreenSize("mobile");
+			}
 		};
 
 		window.addEventListener("resize", handleResize);
@@ -32,24 +37,31 @@ const HomePage = () => {
 	}, []);
 
 	return (
-		<div className="">
-			<div className="h-[600px] w-full flex place-content-center relative">
+		<div>
+			<div className="h-[600px] w-full flex place-content-center relative md:h-[729px] ">
 				<img
-					src={isMobile ? heroBgMobile : heroBgTablet}
+					src={
+						screenSize === "desktop"
+							? heroBgDesktop
+							: screenSize ===
+							  "tablet"
+							? heroBgTablet
+							: heroBgMobile
+					}
 					alt="hero image"
-					className="absolute w-full h-[600px]"
+					className="absolute w-full h-[600px] md:h-[729px]"
 				/>
-				<div className="text-white flex flex-col items-center w-[328px] h-[290px] mt-[198px] gap-4 z-10">
-					<h1 className="tracking-[0.5em] text-transform: uppercase text-sm font-thin opacity-50">
+				<div className="text-white flex flex-col items-center w-[328px] h-[290px] mt-[198px] gap-4 z-10 md:w-[379px] md:h-[346px] md:gap-7">
+					<h1 className="tracking-[0.5em] text-transform: uppercase text-sm font-thin opacity-50 md:text-[14px] md:tracking-[10px]">
 						New Product
 					</h1>
-					<h2 className="font-bold text-4xl text-transform: uppercase tracking-wider">
+					<h2 className="font-bold text-4xl uppercase tracking-wider md:tracking-[2px] md:text-[56px] md:leading-[58px]">
 						XX99 mark ii{" "}
 						<span className="block">
 							headphones
 						</span>
 					</h2>
-					<p className="text-center text-[15px] w-[328px] h-[75px] leading-6">
+					<p className="text-center text-[15px] w-[328px] h-[75px] leading-6 md:w-[349px]">
 						Experience natural, lifelike
 						audio and exceptional build
 						quality made for the passionate
@@ -96,7 +108,7 @@ const HomePage = () => {
 
 			<div className="w-[327px] h-[320px] mx-auto my-6 flex items-center relative md:h-[320px] md:w-[689px]">
 				<img
-					src={isMobile ? speakerBg : zx7bg}
+					src={zx7bg}
 					alt="zx7 speaker"
 					className="w-[327px] h-[320px] absolute rounded-lg md:w-[689px] md:h-[320px]"
 				/>
@@ -115,9 +127,7 @@ const HomePage = () => {
 			<div className="grid mx-auto h-[424px] w-[327px] md:grid-cols-2 md:w-[689px] md:h-[320px]">
 				<img
 					srcSet={
-						isMobile
-							? earphonesImg
-							: earphonesImgTablet
+						earphonesImg
 					}
 					alt="earphones in case"
 					className="w-[327px] h-[200px] rounded-lg self-start md:h-full"
@@ -128,7 +138,7 @@ const HomePage = () => {
 							yx1 earphones
 						</h3>
 						<Link to="/product/yx1-earphones">
-							<button className="text-transform: uppercase w-[160px] h-[48px] border border-black ml-[1px] tracking-[1px] font-bold text-[13px] hover:bg-black hover:text-white">
+							<button className="text-transform: uppercase w-[160px] h-[48px] border border-black text-[13px] font-bold tracking-[1px] hover:bg-black hover:text-white">
 								see product
 							</button>
 						</Link>

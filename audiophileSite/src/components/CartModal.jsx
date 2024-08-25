@@ -4,12 +4,14 @@ import {
 	clearCart,
 	addItem,
 	removeItem,
+	selectTotalNumberOfItems
 } from "../features/AddToCartFeature/AddToCartSlice";
 import { Link } from "react-router-dom";
 
 const CartModal = ({ isOpen, handleCloseModal }) => {
 	const itemsInCart = useSelector(selectItems);
 	const dispatch = useDispatch();
+	const totalItems = useSelector(selectTotalNumberOfItems)
 
 	const totalAmount = itemsInCart.reduce(
 		(total, item) => total + item.price * item.quantity,
@@ -18,15 +20,15 @@ const CartModal = ({ isOpen, handleCloseModal }) => {
 
 	return isOpen ? (
 		<div
-			className="fixed inset-0 flex bg-gray-800 bg-opacity-50 transition-colors z-[12]"
+			className="fixed inset-0 flex bg-gray-800 bg-opacity-50 transition-colors z-[12] md:grid md:justify-end "
 			onClick={handleCloseModal}
 		>
 			<div
-				className="bg-white p-8 rounded-lg shadow-lg w-[327px] max-h-[488px] mx-auto mt-[80px] flex flex-col justify-between overflow-auto"
+				className="bg-white p-8 rounded-lg shadow-lg w-[327px] mx-auto mt-[80px] flex flex-col h-[488px] justify-between md:w-[377px] md:mr-8"
 				onClick={(e) => e.stopPropagation()} // Prevent closing the modal when clicking inside it
 			>
 				<h1 className="flex justify-between font-bold text-lg tracking-[1.29px]">
-					Cart ({itemsInCart.length})
+					Cart ({totalItems})
 					<button
 						className="font-medium text-[15px] leading-[25px] underline opacity-50"
 						onClick={() =>
@@ -58,6 +60,9 @@ const CartModal = ({ isOpen, handleCloseModal }) => {
 										.replace(
 											/mark/i,
 											"mk"
+										).replace(
+											/speaker/i,
+											""
 										)
 										.trim();
 
