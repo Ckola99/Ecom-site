@@ -36,7 +36,7 @@ const Footer = () => {
 	}, []);
 
 	return (
-		<div className="">
+		<div role="main" className="">
 			{location.pathname !== "/checkout" && (
 				<div className="my-[121px] h-[698px] w-[327px] mx-auto md:w-[689px] md:h-[633px] md:mt-121px md:mb-[60px] lg:w-[80%] lg:grid lg:grid-cols-2">
 					<img

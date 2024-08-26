@@ -27,12 +27,12 @@ const Layout = () => {
 	return (
 		<div>
 			<ScrollToTop />
-			<Navbar openCart = {handleOpenModal} closeCart={handleCloseModal}/>
+			<Navbar role="navigation" openCart = {handleOpenModal} closeCart={handleCloseModal}/>
 			<CartModal isOpen={isModalOpen} handleCloseModal={handleCloseModal}/>
-			<main className="mt-[58px] md:mt-[58px]">
+			<main role="main" className="mt-[58px] md:mt-[58px]">
 				<Outlet add={addItem} remove={removeItem}/>
 			</main>
-			<Footer />
+			<Footer role="contactInfo"/>
 		</div>
 	);
 };
