@@ -9,7 +9,7 @@ import {
 } from "../features/ConfirmationFeature/ConfirmationSlice";
 import ConfirmationModal from "../components/ConfirmationModal"
 import { setCheckoutFormData } from "../features/CheckoutFeature/CheckoutSlice";
-
+import COD from "/assets/checkout/icon-cash-on-delivery.svg"
 
 // validation schema
 const validationSchema = yup
@@ -262,6 +262,18 @@ const Checkout = () => {
 						</div>
 					</div>
 
+					{paymentMethod === "Cash on Delivery" && (
+						<div className="hidden lg:flex lg:gap-10 mt-3">
+							<img
+								src={COD}
+								className="ml-10"
+							/>
+							<p className="lg:w-[76%] text-[15px] font-medium">
+								The ‘Cash on Delivery’ option enables you to pay in cash when our delivery courier arrives at your residence. Just make sure your address is correct so that your order will not be cancelled.
+							</p>
+						</div>
+					)}
+
 					{/* Conditional rendering of e-Money fields */}
 					{paymentMethod === "e-Money" && (
 						<div className="mt-4 flex flex-col gap-5 md:flex-row">
@@ -286,7 +298,7 @@ const Checkout = () => {
 				</fieldset>
 			</form>
 
-			<div className="bg-white rounded-lg w-[327px] grid justify-self-center mt-10 h-auto p-5 md:w-[689px] lg:m-0 lg:w-[350px] lg:h-auto lg:p-0 lg:col-start-2 lg:row-span-[50%]">
+			<div className="bg-white rounded-lg w-[327px] grid justify-self-center mt-10 h-auto p-5 md:w-[689px] lg:m-0 lg:w-[350px] lg:p-0 lg:col-start-2 lg:row-span-[50%] lg:flex lg:flex-col h-[80%] lg:overflow-auto">
 				<h1 className="text-transform: uppercase py-7 px-5 font-bold text-[18px] ">
 					summary
 				</h1>
