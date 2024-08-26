@@ -134,13 +134,14 @@ const Checkout = () => {
 			<ConfirmationModal />
 			<button
 				onClick={() => navigate(-1)}
-				className="text-[15px] font-medium leading-[25px] ml-[25px] my-[25px] opacity-50 self-start"
+				className="text-[15px] font-medium leading-[25px] ml-[25px] my-[25px] opacity-50 self-start hover:text-main-orange lg:ml-[8.5%] lg:mt-[5%]"
 			>
 				Go Back
 			</button>
 
-			<form
-				className="bg-white w-[327px] h-auto mx-auto rounded-lg py-6 px-5 md:w-[689px]"
+			<div className="lg:w-[80%] lg:grid lg:grid-cols-[65%_31.5%] lg:gap-[3%]">
+				<form
+				className="bg-white w-[327px] h-auto mx-auto rounded-lg py-6 px-5 md:w-[689px] lg:w-full"
 				onSubmit={handleSubmit(submitForm)}
 			>
 				<h1 className="text-transform: uppercase mb-8 font-bold">
@@ -285,11 +286,11 @@ const Checkout = () => {
 				</fieldset>
 			</form>
 
-			<div className="bg-white rounded-lg w-[327px] grid justify-self-center mt-10 h-auto p-5 md:w-[689px]">
-				<h1 className="text-transform: uppercase py-7 px-5 font-bold text-[18px]">
+			<div className="bg-white rounded-lg w-[327px] grid justify-self-center mt-10 h-auto p-5 md:w-[689px] lg:m-0 lg:w-[350px] lg:h-auto lg:p-0 lg:col-start-2 lg:row-span-[50%]">
+				<h1 className="text-transform: uppercase py-7 px-5 font-bold text-[18px] ">
 					summary
 				</h1>
-				<div className="flex flex-col gap-5">
+				<div className="flex flex-col gap-5 ">
 					{cart.map((item, index) => {
 						const productImage = `/assets/product-${item.slug}/mobile/image-category-page-preview.jpg`;
 						const formattedName = item.name
@@ -312,7 +313,7 @@ const Checkout = () => {
 						return (
 							<div
 								key={index}
-								className="flex justify-between px-5"
+								className="flex justify-between px-5 "
 							>
 								<div className="flex items-center">
 									<img
@@ -347,7 +348,7 @@ const Checkout = () => {
 						);
 					})}
 				</div>
-				<div className="px-5 py-7 flex flex-col gap-3">
+				<div className="px-5 py-7 flex flex-col gap-3 ">
 					<p className="text-transform: uppercase flex justify-between font-bold">
 						<span className="font-medium opacity-50">
 							Total
@@ -393,15 +394,16 @@ const Checkout = () => {
 
 				<button
 					onClick={handleClick}
-					className={`w-[285px] h-[48px] md:w-[623px] ${
+					className={`w-[285px] h-[48px] md:w-[623px] lg:w-[81%] ${
 						cart.length === 0
 							? "bg-white text-black border border-black cursor-not-allowed"
 							: "bg-main-orange cursor-pointer text-white"
-					} text-transform: uppercase text-[13px] font-bold tracking-[1px] mx-auto mt-10 ${ cart.length && "hover:bg-[#FBAF85]" } mb-5`}
+					} text-transform: uppercase text-[13px] font-bold tracking-[1px] mx-auto mt-10 ${ cart.length && "hover:bg-[#FBAF85]" } mb-5 lg:mb-0`}
 					disabled={cart.length === 0}
 				>
 					continue & pay
 				</button>
+			</div>
 			</div>
 		</div>
 	);

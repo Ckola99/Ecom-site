@@ -5,7 +5,6 @@ import Items from "../components/Items"
 
 const CategoryPage = () => {
 	const { category } = useParams();
-	const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
 	// Filter items based on the category from the URL parameter
 	let categoryItems = productsData.filter((p) => p.category === category);
@@ -14,6 +13,7 @@ const CategoryPage = () => {
 	categoryItems = categoryItems.sort(
 		(a, b) => (b.new ? 1 : -1) - (a.new ? 1 : -1)
 	);
+	console.log(categoryItems)
 
 	const format = (productName) => {
 		// Split the slug by dashes
@@ -24,13 +24,27 @@ const CategoryPage = () => {
 		return name;
 	}
 
-	// Update window width on resize
+	const [screenSize, setScreenSize] = useState("mobile");
+
 	useEffect(() => {
-		const handleResize = () => setWindowWidth(window.innerWidth);
+		const handleResize = () => {
+			if (window.innerWidth >= 1024) {
+				setScreenSize("desktop");
+			} else if (window.innerWidth >= 768) {
+				setScreenSize("tablet");
+			} else {
+				setScreenSize("mobile");
+			}
+		};
+
 		window.addEventListener("resize", handleResize);
 
-		// Clean up the event listener on component unmount
-		return () => window.removeEventListener("resize", handleResize);
+		// Check initial width on component mount
+		handleResize();
+
+		return () => {
+			window.removeEventListener("resize", handleResize);
+		};
 	}, []);
 
 	return (
@@ -41,31 +55,53 @@ const CategoryPage = () => {
 				</h1>
 			</div>
 
-			{categoryItems.map((item) => (
+			{categoryItems.map((item, index) => (
 				<div
 					key={item.id}
-					className="h-auto w-[327px] mx-auto mt-[68px] flex flex-col justify-between md:w-[689px] items-center"
+					className={`h-auto w-[327px] mx-auto mt-[68px] flex flex-col justify-between md:w-[689px] items-center lg:w-[80%] lg:grid lg:grid-cols-2 lg:h-[560px] gap-[11%] lg:mt-[12%]`}
 				>
 					<img
 						src={
-							windowWidth < 768
+							 screenSize ===
+								  "tablet"
 								? item
 										.categoryImage
-										.mobile
+										.tablet
+								: screenSize ===
+								  "desktop"
+								? item
+										.categoryImage
+										.desktop
 								: item
 										.categoryImage
-										.tablet
+										.mobile
 						}
 						alt={item.name}
-						className="rounded-lg h-[352px] md:w-[689px]"
+						className={`rounded-lg h-[352px] md:w-[689px] lg:h-full ${
+							index % 2 !== 0 &&
+							"lg:col-start-2"
+						} `}
 					/>
-					<div className={`flex flex-col items-center w-[327px] h-auto gap-5 justify-between md:w-[572px] ${!item.new && "mt-5"}`}>
-						{item.new && <p className="uppercase text-main-orange tracking-[10px] text-[14px] mt-5">new product</p>}
-						<h2 className="uppercase text-[28px] font-bold tracking-[1px] md:text-[40px] text-center">
+					<div
+						className={`flex flex-col items-center w-[327px] h-auto gap-5 justify-between md:w-[572px] ${
+							!item.new && "mt-5"
+						} lg:items-start ${
+							index % 2 !== 0 &&
+							"lg:col-start-1 lg:row-start-1"
+						} `}
+					>
+						{item.new && (
+							<p className="uppercase text-main-orange tracking-[10px] text-[14px] mt-5">
+								new product
+							</p>
+						)}
+						<h2 className="uppercase text-[28px] font-bold tracking-[1px] md:text-[40px] text-center lg:text-left">
 							{format(item.name)}
-							<span className="block">{item.category}</span>
+							<span className="block">
+								{item.category}
+							</span>
 						</h2>
-						<p className="font-medium leading-[25px] text-center text-[15px] opacity-50">
+						<p className="font-medium leading-[25px] text-center text-[15px] opacity-50 lg:text-left lg:w-[80%]">
 							{item.description}
 						</p>
 						<Link

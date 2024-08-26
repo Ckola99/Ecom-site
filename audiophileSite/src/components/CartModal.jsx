@@ -20,11 +20,11 @@ const CartModal = ({ isOpen, handleCloseModal }) => {
 
 	return isOpen ? (
 		<div
-			className="fixed inset-0 flex bg-gray-800 bg-opacity-50 transition-colors z-[12] md:grid md:justify-end "
+			className="fixed inset-0 flex bg-gray-800 bg-opacity-50 transition-colors z-[12] md:grid md:justify-end lg:pr-[5%]"
 			onClick={handleCloseModal}
 		>
 			<div
-				className="bg-white p-8 rounded-lg shadow-lg w-[327px] mx-auto mt-[80px] flex flex-col h-[488px] justify-between md:w-[377px] md:mr-8"
+				className="bg-white p-8 rounded-lg shadow-lg w-[327px] mx-auto mt-[80px] flex flex-col h-[488px] justify-between md:w-[377px] md:mr-8 "
 				onClick={(e) => e.stopPropagation()} // Prevent closing the modal when clicking inside it
 			>
 				<h1 className="flex justify-between font-bold text-lg tracking-[1.29px]">
