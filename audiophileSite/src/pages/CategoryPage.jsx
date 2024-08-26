@@ -1,7 +1,8 @@
 import { useParams, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import productsData from "../data.json";
-import Items from "../components/Items"
+import Items from "../components/Items";
+import { Helmet } from "react-helmet";
 
 const CategoryPage = () => {
 	const { category } = useParams();
@@ -13,16 +14,16 @@ const CategoryPage = () => {
 	categoryItems = categoryItems.sort(
 		(a, b) => (b.new ? 1 : -1) - (a.new ? 1 : -1)
 	);
-	console.log(categoryItems)
+	console.log(categoryItems);
 
 	const format = (productName) => {
 		// Split the slug by dashes
-  		const parts = productName.split(' ');
-  		parts.pop();
-  		const name = parts.join(' ');
+		const parts = productName.split(" ");
+		parts.pop();
+		const name = parts.join(" ");
 
 		return name;
-	}
+	};
 
 	const [screenSize, setScreenSize] = useState("mobile");
 
@@ -49,6 +50,13 @@ const CategoryPage = () => {
 
 	return (
 		<div className="">
+			<Helmet>
+				<title>{`${category} - Product Category`}</title>
+				<meta
+					name="description"
+					content={`Explore our ${category} category to find a curated selection of new and featured products. Browse through our collection of ${category} items, each with detailed descriptions and high-quality images optimized for various devices. Discover the latest trends and styles, and click through to see individual products in detail. Shop now and enhance your experience with our diverse offerings!`}
+				/>
+			</Helmet>
 			<div className="h-[100px] bg-black w-full flex justify-center items-center md:h-[250px]">
 				<h1 className="uppercase text-white font-bold text-[28px] tracking-[2px] md:text-[40px]">
 					{category}
@@ -62,8 +70,7 @@ const CategoryPage = () => {
 				>
 					<img
 						src={
-							 screenSize ===
-								  "tablet"
+							screenSize === "tablet"
 								? item
 										.categoryImage
 										.tablet

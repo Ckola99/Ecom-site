@@ -11,7 +11,7 @@ import zx7bgDesktop from "/assets/home/desktop/image-speaker-zx7.jpg";
 import earphonesImgTablet from "/assets/home/tablet/image-earphones-yx1.jpg";
 import earphonesImgDesktop from "/assets/home/desktop/image-earphones-yx1.jpg";
 import { useState, useEffect } from "react";
-
+import { Helmet } from "react-helmet";
 
 const HomePage = () => {
 	const [screenSize, setScreenSize] = useState("mobile");
@@ -39,6 +39,13 @@ const HomePage = () => {
 
 	return (
 		<div>
+			<Helmet>
+				<title>Home - Premium Audio Products</title>
+				<meta
+					name="description"
+					content="Explore our range of premium audio products on our home page. Discover the XX99 Mark II headphones, ZX9 and ZX7 speakers, and YX1 earphones with high-quality images and detailed descriptions. Shop now for top-notch audio experiences!"
+				/>
+			</Helmet>
 			<div className="h-[600px] w-full flex place-content-center relative md:h-[729px] lg:place-content-start">
 				<img
 					src={
