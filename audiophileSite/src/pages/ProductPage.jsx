@@ -117,7 +117,7 @@ const ProductPage = () => {
 						{product.features}
 					</p>
 				</div>
-				<div className="w-[327px] h-[217px] mx-auto flex flex-col justify-between md:w-[549px] md:h-[159px] md:grid md:grid-cols-2 md:mx-0 md:ml-10 md:gap-[11px] lg:ml-0 lg:flex lg:flex-col">
+				<div className="w-[327px] h-[217px] mx-auto flex flex-col justify-between md:w-[549px] md:h-[159px] md:grid md:grid-cols-2 md:ml-[8%] md:gap-[11px] lg:ml-0 lg:flex lg:flex-col">
 					<h2 className="text-transform: uppercase font-bold text-2xl leading-[36px] tracking-[0.86px]">
 						in the box
 					</h2>
