@@ -176,7 +176,7 @@ These improvements have helped me enhance both the efficiency and the overall us
 
 ### Continued development
 
-IN future I would like to improve my websites performance in terms of using the threading of javascript. I realise some of my solutions are a bit verbose and I would like to in the future improve some of the code and refactor a more lightweight solution. 
+IN future I would like to improve my websites performance in terms of using the threading of javascript. I realise some of my solutions are a bit verbose and I would like to in the future improve some of the code and refactor a more lightweight solution.
 
 ### Useful resources
 
@@ -185,6 +185,7 @@ IN future I would like to improve my websites performance in terms of using the 
 - [ChatGPT](chatgpt.com) - used to somewhat google and speed up my development process
 
 ## Author
+
 
 - Website - [Add your name here](https://www.your-site.com)
 - Frontend Mentor - [@Ckola99](https://www.frontendmentor.io/profile/Ckola99)
