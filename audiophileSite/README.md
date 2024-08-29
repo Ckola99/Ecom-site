@@ -164,9 +164,19 @@ I learned how to use React hook forms and validation schemas along with yup for 
 	.required();
 ```
 
+**update**
+
+In this project, I optimized image loading by implementing `srcset` attributes for responsive images. This ensures that users on different devices (mobile, tablet, and desktop) receive appropriately sized images, reducing unnecessary data transfer and improving page load times. The `src` attribute is retained as a fallback to ensure compatibility across all browsers.
+
+- **Preloading Critical Assets**: By preloading key images and other critical assets, I learned how to improve the Largest Contentful Paint (LCP) metric, which is crucial for a good user experience. Preloading ensures that important visual elements are available as soon as the page starts loading, reducing the time it takes for the largest visible content element to be rendered.
+
+- **Understanding LCP**: LCP measures how quickly the main content of a page is rendered to the user, significantly affecting perceived performance. Optimizing LCP not only improves user satisfaction but also contributes to better SEO rankings, as LCP is a key metric in Google's Core Web Vitals.
+
+These improvements have helped me enhance both the efficiency and the overall user experience of the website, ensuring that it loads quickly and performs well across all devices.
+
 ### Continued development
 
-IN future I would like to improve my websites performance in terms of using the threading of javascript. I realise some of my solutions are a bit verbose and I would like to in the future improve some of the code and refactor a more lightweight solution.
+IN future I would like to improve my websites performance in terms of using the threading of javascript. I realise some of my solutions are a bit verbose and I would like to in the future improve some of the code and refactor a more lightweight solution. 
 
 ### Useful resources
 
