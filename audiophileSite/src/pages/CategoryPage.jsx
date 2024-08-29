@@ -25,7 +25,7 @@ const CategoryPage = () => {
 		return name;
 	};
 
-	const [screenSize, setScreenSize] = useState("mobile");
+	const [screenSize, setScreenSize] = useState(window.innerWidth >= 768 ? "tablet" : window.innerWidth >= 1024 ? "desktop" : "mobile" );
 
 	useEffect(() => {
 		const handleResize = () => {
