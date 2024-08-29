@@ -174,6 +174,10 @@ In this project, I optimized image loading by implementing `srcset` attributes f
 
 These improvements have helped me enhance both the efficiency and the overall user experience of the website, ensuring that it loads quickly and performs well across all devices.
 
+**update number 2**
+
+though I did learn tcp this solution mentioned above ended up introducing bugs into my code and was not good at all I ended up resulting to dynamically changing the images with react. I am searching for another solution to this problem and will update in future.
+
 ### Continued development
 
 IN future I would like to improve my websites performance in terms of using the threading of javascript. I realise some of my solutions are a bit verbose and I would like to in the future improve some of the code and refactor a more lightweight solution.
