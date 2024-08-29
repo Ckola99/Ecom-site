@@ -347,7 +347,7 @@ const Checkout = () => {
 					</fieldset>
 				</form>
 
-				<div className="bg-white rounded-lg w-[327px] grid justify-self-center mt-10 h-auto p-5 md:w-[689px] lg:m-0 lg:w-[350px] lg:p-0 lg:col-start-2 lg:row-span-[50%] lg:flex lg:flex-col h-[80%] lg:overflow-auto">
+				<div className="bg-white rounded-lg w-[327px] grid justify-self-center mt-10 h-auto p-5 md:w-[689px] lg:m-0 lg:w-full lg:p-0 lg:col-start-2 lg:row-span-[50%] lg:flex lg:flex-col lg:h-[80%] lg:overflow-auto">
 					<h1 className="text-transform: uppercase py-7 px-5 font-bold text-[18px] ">
 						summary
 					</h1>

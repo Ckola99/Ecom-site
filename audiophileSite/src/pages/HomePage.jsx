@@ -49,9 +49,9 @@ const HomePage = () => {
       <div role="Hero" className="h-[600px] w-full flex place-content-center relative md:h-[729px] lg:place-content-start">
         <img
           srcSet={`
-            ${heroBgMobile} 300w,
-            ${heroBgTablet} 768w,
-            ${heroBgDesktop} 1024w
+            ${heroBgMobile} 300vw,
+            ${heroBgTablet} 768vw,
+            ${heroBgDesktop} 1024vw
           `}
           src={heroBgMobile} // fallback image
           alt="hero image"
@@ -115,9 +115,9 @@ const HomePage = () => {
       <div className="w-[327px] h-[320px] mx-auto my-6 flex items-center relative md:h-[320px] md:w-[689px] lg:w-[80%]">
         <img
           srcSet={`
-            ${speakerBg} 300w,
-            ${zx7bg} 768w,
-            ${zx7bgDesktop} 1024w
+            ${speakerBg} 300vw,
+            ${zx7bg} 768vw,
+            ${zx7bgDesktop} 1024vw
           `}
           src={speakerBg} // fallback image
           alt="zx7 speaker"
@@ -138,9 +138,9 @@ const HomePage = () => {
       <div className="grid mx-auto h-[424px] w-[327px] md:grid-cols-2 md:w-[689px] md:h-[320px] lg:w-[80%] lg:gap-8">
         <img
           srcSet={`
-            ${earphonesImg} 300w,
-            ${earphonesImgTablet} 768w,
-            ${earphonesImgDesktop} 1024w
+            ${earphonesImg} 300vw,
+            ${earphonesImgTablet} 768vw,
+            ${earphonesImgDesktop} 1024vw
           `}
           src={earphonesImg} // fallback image
           alt="earphones in case"
