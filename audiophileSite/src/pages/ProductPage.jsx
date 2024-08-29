@@ -10,14 +10,13 @@ const ProductPage = () => {
 	const [screenSize, setScreenSize] = useState(window.innerWidth >= 768 ? "tablet" : window.innerWidth >= 1024 ? "desktop" : "mobile");
 
 	useEffect(() => {
-		const handleResize = () => {
 
 		window.addEventListener("resize", handleResize);
 		
 
 		return () => {
 			window.removeEventListener("resize", handleResize);
-		};
+		}
 	}, []);
 
 	const { productSlug } = useParams();
