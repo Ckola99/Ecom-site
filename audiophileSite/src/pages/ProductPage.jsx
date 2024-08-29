@@ -32,34 +32,16 @@ const ProductPage = () => {
 
 	const { productSlug } = useParams();
 	const product = productsData.find((p) => p.slug === productSlug);
-	const picUrl = `/assets/product-${productSlug}/${
-		screenSize === "tablet"
-			? "tablet"
-			: screenSize === "desktop"
-			? "desktop"
-			: "mobile"
-	}/image-category-page-preview.jpg`;
-	const productPic1 = `/assets/product-${productSlug}/${
-		screenSize === "tablet"
-			? "tablet"
-			: screenSize === "desktop"
-			? "desktop"
-			: "mobile"
-	}/image-gallery-1.jpg`;
-	const productPic2 = `/assets/product-${productSlug}/${
-		screenSize === "tablet"
-			? "tablet"
-			: screenSize === "desktop"
-			? "desktop"
-			: "mobile"
-	}/image-gallery-2.jpg`;
-	const productPic3 = `/assets/product-${productSlug}/${
-		screenSize === "tablet"
-			? "tablet"
-			: screenSize === "desktop"
-			? "desktop"
-			: "mobile"
-	}/image-gallery-3.jpg`;
+
+	const generateImageUrl = (imageName) => {
+		return `/assets/product-${productSlug}/${screenSize}/${imageName}`;
+	};
+
+	const picUrl = generateImageUrl("image-category-page-preview.jpg");
+	const productPic1 = generateImageUrl("image-gallery-1.jpg");
+	const productPic2 = generateImageUrl("image-gallery-2.jpg");
+	const productPic3 = generateImageUrl("image-gallery-3.jpg");
+
 	const navigate = useNavigate();
 	const formattedPrice = product.price.toLocaleString();
 
@@ -72,8 +54,8 @@ const ProductPage = () => {
 			<Helmet>
 				<title>{product.name} - Buy Now</title>
 				<meta
-				name="description"
-				content={`Discover the features and details of the ${product.name}. Explore high-quality images, pricing, and more on our product page. Buy now and enjoy top-notch performance!`}
+					name="description"
+					content={`Discover the features and details of the ${product.name}. Explore high-quality images, pricing, and more on our product page. Buy now and enjoy top-notch performance!`}
 				/>
 			</Helmet>
 			<button
@@ -108,7 +90,7 @@ const ProductPage = () => {
 					<AddToCart product={product} />
 				</div>
 			</div>
-			<div className=" lg:grid lg:grid-cols-[57%_32%] lg:w-[80%] lg:mx-auto lg:mt-20 lg:gap-[11%]">
+			<div className="lg:grid lg:grid-cols-[57%_32%] lg:w-[80%] lg:mx-auto lg:mt-20 lg:gap-[11%]">
 				<div className="w-[327px] h-auto flex flex-col mx-auto my-[70px] justify-between md:w-[689px] gap-7 lg:m-0 lg:w-full">
 					<h2 className="font-bold text-2xl leading-[36px] tracking-[0.86px] text-transform: uppercase">
 						Features
