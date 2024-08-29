@@ -73,15 +73,14 @@ const HomePage = () => {
 					name="description"
 					content="Explore our range of premium audio products on our home page. Discover the XX99 Mark II headphones, ZX9 and ZX7 speakers, and YX1 earphones with high-quality images and detailed descriptions. Shop now for top-notch audio experiences!"
 				/>
+				<link rel="preload" href={heroBg} as="image" />
 			</Helmet>
-			<div
-				role="Hero"
-				className="h-[600px] w-full flex place-content-center relative md:h-[729px] lg:place-content-start"
-			>
+			<div className="h-[600px] w-full flex place-content-center relative md:h-[729px] lg:place-content-start">
 				<img
 					src={heroBg} // Use dynamically chosen hero image
 					alt="hero image"
 					className="absolute w-full h-[600px] md:h-[729px]"
+					loading="eager"
 				/>
 				<div className="text-white flex flex-col items-center w-[328px] h-[290px] mt-[198px] gap-4 z-10 md:w-[379px] md:h-[346px] md:gap-7 lg:items-start lg:ml-[11%]">
 					<h1 className="tracking-[0.5em] uppercase text-sm font-thin opacity-50 md:text-[14px] md:tracking-[10px]">
@@ -117,6 +116,7 @@ const HomePage = () => {
 					src={speakerNoBg}
 					alt="speakers"
 					className="w-[172.25px] h-[207px] mt-[45px] mx-auto md:w-[197.21px] md:h-[237px] lg:w-[36%] lg:h-[85%] lg:mt-[95px] relative"
+					loading="lazy"
 				/>
 				<div className="w-[280px] mx-auto text-white text-center md:w-[349px] md:h-[303px] md:mt-[67px] lg:text-left">
 					<h3 className="font-bold text-[36px] leading-[40px] tracking-[1.29px] text-transform: uppercase mt-11 md:text-[56px] md:leading-[58px]">
@@ -143,6 +143,7 @@ const HomePage = () => {
 					src={speakerBg} // Use dynamically chosen speaker background
 					alt="zx7 speaker"
 					className="w-[327px] h-[320px] absolute rounded-lg md:w-[689px] md:h-[320px] lg:w-full"
+					loading="lazy"
 				/>
 				<div className="flex flex-col w-[210px] h-[118px] justify-between ml-6 z-10 md:ml-[60px] lg:ml-[8%]">
 					<p className="text-transform: uppercase text-[28px] font-bold tracking-[2px]">
@@ -161,17 +162,17 @@ const HomePage = () => {
 					src={earphonesImg} // Use dynamically chosen earphones image
 					alt="yx1 earphones"
 					className="w-[327px] rounded-lg object-cover md:h-full lg:w-full"
+					loading="lazy"
 				/>
 				<div className="flex items-center text-center md:items-center md:text-left md:justify-around lg:h-full bg-second-gray h-full rounded-lg pl-[10%] md:place-items-center md:pl-0 ">
 					<h3 className="text-[28px] font-bold tracking-[1.29px] uppercase h-[118px] w-[247px] flex flex-col justify-between items-start">
 						yx1 earphones
-
 						<Link to="/product/yx1-earphones">
 							<button className="text-transform: uppercase w-[160px] h-[48px] border border-black text-[13px] font-bold tracking-[1px] hover:bg-black hover:text-white">
 								see product
 							</button>
 						</Link>
-            </h3>
+					</h3>
 				</div>
 			</div>
 		</div>
