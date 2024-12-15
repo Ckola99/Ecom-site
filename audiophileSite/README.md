@@ -41,7 +41,7 @@ Users should be able to:
 #### Tablet view of App.
 ![mobile view of app](./public/assets/audiophileTabletView.png)
 
-#### Mobile view of App.
+#### Desktop view of App.
 ![mobile view of app](./public/assets/audiophileDesktopView.png)
 
 ### Links
